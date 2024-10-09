@@ -4,6 +4,7 @@
 --- PREFIX: mbox
 --- MOD_AUTHOR: [Nrio, elbe]
 --- MOD_DESCRIPTION: Adds Slimy Card and The Rebirth. It is based on JellyTarots from Jellymods but not compatible
+--- BADGE_COLOUR: 377a42
 
 ----------------------------------------------
 ------------MOD CODE -------------------------
@@ -194,6 +195,25 @@ SMODS.Enhancement {
 	end
 }
 
+if SMODS.findModByID("Cryptid") then
+    SMODS.Back {
+        name = "Globe Deck",
+        key = "globe",
+        config = { cry_force_enhancement = "m_mbox_geo" },
+        pos = { x = 1, y = 0 },
+        atlas = "enhancements",
+        loc_txt = {
+            name = "Globe Deck",
+            text = {
+                "All {C:attention}playing cards{}",
+                "are {C:attention,T:m_mbox_geo}Geo Cards{}",
+                "Cards cannot change enhancements",
+                "{s:0.8,C:inactive}",
+            },
+        },
+    }
+end
+
 SMODS.Challenge {
     key = 'globe',
     jokers = {},
@@ -286,6 +306,5 @@ SMODS.Challenge {
         }
     }
 }
-
 ----------------------------------------------
 ------------MOD CODE END----------------------
